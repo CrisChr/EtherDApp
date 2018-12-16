@@ -13,8 +13,8 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build.gradle"
-            line="141"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build.gradle"
+            line="142"
             column="5"/>
     </issue>
 
@@ -26,12 +26,12 @@
         priority="4"
         summary="Gradle Dynamic Version"
         explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
-        errorLine1="    implementation &quot;com.facebook.react:react-native:+&quot;  // From node_modules"
-        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        errorLine1="    implementation &quot;com.facebook.react:react-native:+&quot;  // From node_module"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build.gradle"
-            line="142"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build.gradle"
+            line="143"
             column="5"/>
     </issue>
 
@@ -45,15 +45,15 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png"/>
     </issue>
 
     <issue
@@ -68,15 +68,15 @@
         excludedVariants="debug"
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
     </issue>
 
     <issue
@@ -91,7 +91,7 @@
         excludedVariants="debug"
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backiconmask.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backiconmask.png"/>
     </issue>
 
     <issue
@@ -107,7 +107,7 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi"/>
     </issue>
 
     <issue
@@ -123,7 +123,7 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi"/>
     </issue>
 
     <issue
@@ -139,7 +139,7 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi"/>
     </issue>
 
     <issue
@@ -156,7 +156,7 @@
         errorLine2="    ^"
         quickfix="studio">
         <location
-            file="E:\AndroidDemo\AwesomeApp\android\app\src\main\AndroidManifest.xml"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml"
             line="7"
             column="5"/>
     </issue>

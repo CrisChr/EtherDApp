@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidDemo\\AwesomeApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-lv\\values-lv.xml",
+            "outputFile": "E:\\AndroidDemo\\RN\\AwesomeApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-lv\\values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Cris\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\41d8de884974eed8cc21337ae6400d81\\res\\values-lv\\values-lv.xml",

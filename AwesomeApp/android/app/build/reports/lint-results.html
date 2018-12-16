@@ -176,7 +176,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 9 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sat Dec 15 16:57:03 CST 2018      </nav>
+Check performed at Sun Dec 16 15:09:49 CST 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -241,13 +241,12 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:141</span>: <span class="message">A newer version of com.android.support:appcompat-v7 than 27.1.1 is available: 28.0.0</span><br /><pre class="errorlines">
-<span class="lineno"> 138 </span>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:142</span>: <span class="message">A newer version of com.android.support:appcompat-v7 than 27.1.1 is available: 28.0.0</span><br /><pre class="errorlines">
 <span class="lineno"> 139 </span>dependencies {
-<span class="lineno"> 140 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
-<span class="caretline"><span class="lineno"> 141 </span>    <span class="warning">implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 142 </span>    implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_modules</span>
-<span class="lineno"> 143 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="lineno"> 140 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="lineno"> 141 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
+<span class="caretline"><span class="lineno"> 142 </span>    <span class="warning">implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 143 </span>    implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span>
 <span class="lineno"> 144 </span>}
 </pre>
 
@@ -287,14 +286,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:142</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.facebook.react:react-native:+)</span><br /><pre class="errorlines">
-<span class="lineno"> 139 </span>dependencies {
-<span class="lineno"> 140 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
-<span class="lineno"> 141 </span>    implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span>
-<span class="caretline"><span class="lineno"> 142 </span>    <span class="warning">implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_modules</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 143 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:143</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.facebook.react:react-native:+)</span><br /><pre class="errorlines">
+<span class="lineno"> 140 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="lineno"> 141 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
+<span class="lineno"> 142 </span>    implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span>
+<span class="caretline"><span class="lineno"> 143 </span>    <span class="warning">implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 144 </span>}
-</pre>
+<span class="lineno"> 145 </span>
+<span class="lineno"> 146 </span><span class="comment">// Run this once to be able to run the application with BUCK</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDynamicVersion" style="display: none;">
