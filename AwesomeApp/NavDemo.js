@@ -1,24 +1,24 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import HomeContainer from './FirstPage';
-import Friends from './Friends';
+import WalletContainer from './FirstPage';
+import Transfer from './Transfer';
 import Account from './Account';
 
-class HomeContainerScreen extends React.Component{
+class WalletContainerScreen extends React.Component{
   render(){
     return(
-      <HomeContainer/>
+      <WalletContainer/>
     )
   }
 }
 
-class FriendsScreen extends React.Component {
+class TransferScreen extends React.Component {
   render(){
     return(
-      <Friends/>
+      <Transfer/>
     )
   }
 }
@@ -33,18 +33,33 @@ class AccountScreen extends React.Component {
 
 const stackNav = createBottomTabNavigator(
   {
-    Home: {
-      screen: HomeContainerScreen,
-      tabBarIcon: ({focused, horizontal, tintColor}) => (
-          focused ? <Image source={require('./img/home_active.png')} style={{ height: 30, width: 30, tintColor: 'white'}}/>
-            : <Image source={require('./img/home_inactive.png')} style={{ height: 30, width: 30, tintColor: 'white'}}/>
-      )
+    Wallet: {
+      screen: WalletContainerScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-card' : 'ios-card-outline'} size={40} color={tintColor}/>
+        )
+      })
     },
-    Friends: FriendsScreen,
-    Account: AccountScreen,
+    Transfer: {
+      screen: TransferScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-cash' : 'ios-cash-outline'} size={40} color={tintColor}/>
+        )
+      })
+    },
+    Account: {
+      screen: AccountScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-contact' : 'ios-contact-outline'} size={35} color={tintColor}/>
+        )
+      })
+    }
   },
   {
-    initialRouteName: 'Home', //Initial screen
+    initialRouteName: 'Wallet', //Initial screen
     tabBarOptions: {
       showIcon: true
     }

@@ -28,6 +28,6 @@ const HomeNav = createStackNavigator(
   }
 )
 
-const HomeContainer = createAppContainer(HomeNav);
+const WalletContainer = createAppContainer(HomeNav);
 
-export default HomeContainer;
+export default WalletContainer;

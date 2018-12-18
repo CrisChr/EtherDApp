@@ -4,6 +4,7 @@ ADDED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml:1
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-vector-icons] C:\RNProject\RN\AwesomeApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] C:\RNProject\RN\AwesomeApp\node_modules\react-native-gesture-handler\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\HongRuCai\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\446ad828095e01b67a6052918732ebd9\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\HongRuCai\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5c298b0559d5a27fdf35903e38850cfe\AndroidManifest.xml:17:1-22:12
@@ -98,6 +99,8 @@ uses-sdk
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-vector-icons] C:\RNProject\RN\AwesomeApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\RNProject\RN\AwesomeApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] C:\RNProject\RN\AwesomeApp\node_modules\react-native-gesture-handler\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] C:\RNProject\RN\AwesomeApp\node_modules\react-native-gesture-handler\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\HongRuCai\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\446ad828095e01b67a6052918732ebd9\AndroidManifest.xml:7:5-9:41
