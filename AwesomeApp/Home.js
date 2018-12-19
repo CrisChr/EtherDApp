@@ -5,10 +5,12 @@ import {createStackNavigator, withNavigation, createAppContainer } from 'react-n
 import { ethers } from 'ethers';
 
 export default class WalletContainer extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {
-      mnemonic: ''
+      mnemonic: '',
+      walletAddress: ''
     }
   }
 
@@ -20,7 +22,11 @@ export default class WalletContainer extends React.Component {
   }
 
   createWallet() {
-    Alert.alert(this.state.mnemonic)
+    const basePath = "m/44’/60’/0’/0/0";
+    const account = 0;
+    this.setState({
+      walletAddress: ethers.Wallet.fromMnemonic(this.state.mnemonic, basePath + account)
+    })
   }
 
   render(){
@@ -28,11 +34,12 @@ export default class WalletContainer extends React.Component {
       <View style={{ padding: 20}}>
         <Card title="Mnemonic Words">
           <Text style={{ fontWeight: 'bold', color: 'red', textAlign: 'center'}}>
-            These 12 words are the only way to restore your accounts. Save them somewhere safe and secret.
+            {this.state.mnemonic}
           </Text>
           <Text style={{ padding: 20}}></Text>
         </Card>
-        <Button onPress={() => this.createWallet()} title="I've saved my words safely. Create wallet" style={{paddingTop: 20}}/>
+        <Button onPress={() => this.createWallet()} title="Create Account"/>
+        <Text>{this.state.walletAddress}</Text>
       </View>
     )
   }
