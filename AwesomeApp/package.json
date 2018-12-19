@@ -7,16 +7,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "ethers": "^4.0.20",
     "react": "16.6.1",
     "react-native": "0.57.7",
+    "react-native-elements": "^0.17.0",
     "react-native-gesture-handler": "^1.0.12",
-    "react-navigation": "^3.0.8",
+    "react-native-modal-picker": "0.0.16",
     "react-native-randombytes": "^3.0.0",
     "react-native-vector-icons": "^4.4.2",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "truffle-hdwallet-provider": "0.0.3"
+    "react-navigation": "^3.0.8",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^0.20.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

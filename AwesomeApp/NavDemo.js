@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import WalletContainer from './FirstPage';
+import WalletContainer from './Home';
 import Transfer from './Transfer';
 import Account from './Account';
 
