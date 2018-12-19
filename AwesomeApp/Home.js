@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Alert, Button} from 'react-native';
 import {Card} from 'react-native-elements';
 import {createStackNavigator, withNavigation, createAppContainer } from 'react-navigation';
+import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 
 export default class WalletContainer extends React.Component {
@@ -22,10 +23,9 @@ export default class WalletContainer extends React.Component {
   }
 
   createWallet() {
-    const basePath = "m/44’/60’/0’/0/0";
-    const account = 0;
+    let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/0', 0);
     this.setState({
-      walletAddress: ethers.Wallet.fromMnemonic(this.state.mnemonic, basePath + account)
+      walletAddress: wallet
     })
   }
 
@@ -36,9 +36,9 @@ export default class WalletContainer extends React.Component {
           <Text style={{ fontWeight: 'bold', color: 'red', textAlign: 'center'}}>
             {this.state.mnemonic}
           </Text>
-          <Text style={{ padding: 20}}></Text>
+<Button onPress={() => this.createWallet()} title="Create Account"/>
         </Card>
-        <Button onPress={() => this.createWallet()} title="Create Account"/>
+
         <Text>{this.state.walletAddress}</Text>
       </View>
     )

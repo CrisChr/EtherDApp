@@ -173,10 +173,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 9 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 13 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Dec 17 18:17:45 CST 2018      </nav>
+Check performed at Wed Dec 19 22:25:10 CST 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -185,7 +185,7 @@ Check performed at Mon Dec 17 18:17:45 CST 2018      </nav>
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (1)</a>
       <a class="mdl-navigation__link" href="#GradleDynamicVersion"><i class="material-icons warning-icon">warning</i>Gradle Dynamic Version (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (3)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (7)</a>
       <a class="mdl-navigation__link" href="#IconDensities"><i class="material-icons warning-icon">warning</i>Icon densities validation (3)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
     </nav>
@@ -211,7 +211,7 @@ Check performed at Mon Dec 17 18:17:45 CST 2018      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
@@ -241,14 +241,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:144</span>: <span class="message">A newer version of com.android.support:appcompat-v7 than 27.1.1 is available: 28.0.0</span><br /><pre class="errorlines">
-<span class="lineno"> 141 </span>dependencies {
-<span class="lineno"> 142 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
-<span class="lineno"> 143 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
-<span class="caretline"><span class="lineno"> 144 </span>    <span class="warning">implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 145 </span>    implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span>
-<span class="lineno"> 146 </span>}
-<span class="lineno"> 147 </span>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:145</span>: <span class="message">A newer version of com.android.support:appcompat-v7 than 27.1.1 is available: 28.0.0</span><br /><pre class="errorlines">
+<span class="lineno"> 142 </span>    compile project(<span class="string">':react-native-vector-icons'</span>)
+<span class="lineno"> 143 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="lineno"> 144 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
+<span class="caretline"><span class="lineno"> 145 </span>    <span class="warning">implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 146 </span>    implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span>
+<span class="lineno"> 147 </span>}
+<span class="lineno"> 148 </span>
 </pre>
 
 </div>
@@ -287,14 +287,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:145</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.facebook.react:react-native:+)</span><br /><pre class="errorlines">
-<span class="lineno"> 142 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
-<span class="lineno"> 143 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
-<span class="lineno"> 144 </span>    implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span>
-<span class="caretline"><span class="lineno"> 145 </span>    <span class="warning">implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span></span><span class="comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 146 </span>}
-<span class="lineno"> 147 </span>
-<span class="lineno"> 148 </span><span class="comment">// Run this once to be able to run the application with BUCK</span></pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:146</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.facebook.react:react-native:+)</span><br /><pre class="errorlines">
+<span class="lineno"> 143 </span>    compile project(<span class="string">':react-native-gesture-handler'</span>)
+<span class="lineno"> 144 </span>    implementation fileTree(dir: <span class="string">"libs"</span>, include: [<span class="string">"*.jar"</span>])
+<span class="lineno"> 145 </span>    implementation <span class="string">"com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"</span>
+<span class="caretline"><span class="lineno"> 146 </span>    <span class="warning">implementation <span class="string">"com.facebook.react:react-native:+"</span>  <span class="comment">// From node_module</span></span><span class="comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 147 </span>}
+<span class="lineno"> 148 </span>
+<span class="lineno"> 149 </span><span class="comment">// Run this once to be able to run the application with BUCK</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDynamicVersion" style="display: none;">
@@ -352,9 +352,25 @@ Additional locations: <ul>
 </td><td><a href="../../src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" /></a>
 </td></tr><tr><th></th><th></th><th></th><th></th><th></th></tr>
 </table>
+<span class="location"><a href="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_bell.png">../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_bell.png</a></span>: <img class="embedimage" align="right" src="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_bell.png" /><span class="message">The resource <code>R.drawable.node_modules_reactnativeelements_src_rating_images_bell</code> appears to be unused</span><br clear="right"/>
+
+Applies to variants: release<br/>
+Does <b>not</b> apply to variants: debug<br/>
+<span class="location"><a href="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_heart.png">../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_heart.png</a></span>: <img class="embedimage" align="right" src="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_heart.png" /><span class="message">The resource <code>R.drawable.node_modules_reactnativeelements_src_rating_images_heart</code> appears to be unused</span><br clear="right"/>
+
+Applies to variants: release<br/>
+Does <b>not</b> apply to variants: debug<br/>
+<span class="location"><a href="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_rocket.png">../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_rocket.png</a></span>: <img class="embedimage" align="right" src="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_rocket.png" /><span class="message">The resource <code>R.drawable.node_modules_reactnativeelements_src_rating_images_rocket</code> appears to be unused</span><br clear="right"/>
+
+Applies to variants: release<br/>
+Does <b>not</b> apply to variants: debug<br/>
+<span class="location"><a href="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_star.png">../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_star.png</a></span>: <img class="embedimage" align="right" src="../generated/res/react/release/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_star.png" /><span class="message">The resource <code>R.drawable.node_modules_reactnativeelements_src_rating_images_star</code> appears to be unused</span><br clear="right"/>
+
+Applies to variants: release<br/>
+Does <b>not</b> apply to variants: debug<br/>
 <span class="location"><a href="../generated/res/react/release/drawable-hdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png">../generated/res/react/release/drawable-hdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png</a></span>: <span class="message">The resource <code>R.drawable.node_modules_reactnavigationstack_src_views_assets_backicon</code> appears to be unused</span><br />
-<ul></ul><button id="Location2DivLink" onclick="reveal('Location2Div');" />+ 4 Additional Locations...</button>
-<div id="Location2Div" style="display: none">
+<ul></ul><button id="Location6DivLink" onclick="reveal('Location6Div');" />+ 4 Additional Locations...</button>
+<div id="Location6Div" style="display: none">
 Additional locations: <ul>
 <li> <span class="location"><a href="../generated/res/react/release/drawable-mdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png">../generated/res/react/release/drawable-mdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png</a></span>
 <li> <span class="location"><a href="../generated/res/react/release/drawable-xhdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png">../generated/res/react/release/drawable-xhdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png</a></span>
@@ -415,15 +431,15 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../generated/res/react/release/drawable-hdpi">../generated/res/react/release/drawable-hdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-hdpi</code>: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)</span><br />
+<span class="location"><a href="../generated/res/react/release/drawable-hdpi">../generated/res/react/release/drawable-hdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-hdpi</code>: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png</span><br />
 
 Applies to variants: release<br/>
 Does <b>not</b> apply to variants: debug<br/>
-<span class="location"><a href="../generated/res/react/release/drawable-xhdpi">../generated/res/react/release/drawable-xhdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-xhdpi</code>: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)</span><br />
+<span class="location"><a href="../generated/res/react/release/drawable-xhdpi">../generated/res/react/release/drawable-xhdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-xhdpi</code>: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png</span><br />
 
 Applies to variants: release<br/>
 Does <b>not</b> apply to variants: debug<br/>
-<span class="location"><a href="../generated/res/react/release/drawable-xxhdpi">../generated/res/react/release/drawable-xxhdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-xxhdpi</code>: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)</span><br />
+<span class="location"><a href="../generated/res/react/release/drawable-xxhdpi">../generated/res/react/release/drawable-xxhdpi</a></span>: <span class="message">Missing the following drawables in <code>drawable-xxhdpi</code>: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png</span><br />
 
 Applies to variants: release<br/>
 Does <b>not</b> apply to variants: debug<br/>

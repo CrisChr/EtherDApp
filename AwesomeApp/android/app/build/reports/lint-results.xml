@@ -13,8 +13,8 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build.gradle"
-            line="144"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build.gradle"
+            line="145"
             column="5"/>
     </issue>
 
@@ -30,8 +30,8 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build.gradle"
-            line="145"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build.gradle"
+            line="146"
             column="5"/>
     </issue>
 
@@ -45,15 +45,75 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.node_modules_reactnativeelements_src_rating_images_bell` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        includedVariants="release"
+        excludedVariants="debug"
+        quickfix="studio">
+        <location
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnativeelements_src_rating_images_bell.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.node_modules_reactnativeelements_src_rating_images_heart` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        includedVariants="release"
+        excludedVariants="debug"
+        quickfix="studio">
+        <location
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnativeelements_src_rating_images_heart.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.node_modules_reactnativeelements_src_rating_images_rocket` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        includedVariants="release"
+        excludedVariants="debug"
+        quickfix="studio">
+        <location
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnativeelements_src_rating_images_rocket.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.node_modules_reactnativeelements_src_rating_images_star` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        includedVariants="release"
+        excludedVariants="debug"
+        quickfix="studio">
+        <location
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnativeelements_src_rating_images_star.png"/>
     </issue>
 
     <issue
@@ -68,15 +128,15 @@
         excludedVariants="debug"
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxxhdpi\node_modules_reactnavigationstack_src_views_assets_backicon.png"/>
     </issue>
 
     <issue
@@ -91,13 +151,13 @@
         excludedVariants="debug"
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backiconmask.png"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-mdpi\node_modules_reactnavigationstack_src_views_assets_backiconmask.png"/>
     </issue>
 
     <issue
         id="IconDensities"
         severity="Warning"
-        message="Missing the following drawables in `drawable-hdpi`: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)"
+        message="Missing the following drawables in `drawable-hdpi`: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png"
         category="Usability:Icons"
         priority="4"
         summary="Icon densities validation"
@@ -107,13 +167,13 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-hdpi"/>
     </issue>
 
     <issue
         id="IconDensities"
         severity="Warning"
-        message="Missing the following drawables in `drawable-xhdpi`: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)"
+        message="Missing the following drawables in `drawable-xhdpi`: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png"
         category="Usability:Icons"
         priority="4"
         summary="Icon densities validation"
@@ -123,13 +183,13 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xhdpi"/>
     </issue>
 
     <issue
         id="IconDensities"
         severity="Warning"
-        message="Missing the following drawables in `drawable-xxhdpi`: node_modules_reactnavigationstack_src_views_assets_backiconmask.png (found in drawable-mdpi)"
+        message="Missing the following drawables in `drawable-xxhdpi`: node_modules_reactnativeelements_src_rating_images_bell.png, node_modules_reactnativeelements_src_rating_images_heart.png, node_modules_reactnativeelements_src_rating_images_rocket.png, node_modules_reactnativeelements_src_rating_images_star.png, node_modules_reactnavigationstack_src_views_assets_backiconmask.png"
         category="Usability:Icons"
         priority="4"
         summary="Icon densities validation"
@@ -139,7 +199,7 @@
         includedVariants="release"
         excludedVariants="debug">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi"/>
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\build\generated\res\react\release\drawable-xxhdpi"/>
     </issue>
 
     <issue
@@ -156,7 +216,7 @@
         errorLine2="    ^"
         quickfix="studio">
         <location
-            file="C:\RNProject\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml"
+            file="E:\AndroidDemo\RN\AwesomeApp\android\app\src\main\AndroidManifest.xml"
             line="7"
             column="5"/>
     </issue>

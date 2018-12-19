@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\RNProject\\RN\\AwesomeApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw\\values-sw.xml",
+            "outputFile": "E:\\AndroidDemo\\RN\\AwesomeApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw\\values-sw.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HongRuCai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9ed0310219aa653e09fa64157fcc85c9\\res\\values-sw\\values-sw.xml",
+                    "source": "C:\\Users\\Cris\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\b85c472447b97b95723db9bfdaec33e5\\res\\values-sw\\values-sw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,306,414,504,609,726,808,891,973,1074,1183,1282,1389,1498,1603,1765,1862",
+                        "endColumns": "102,97,107,89,104,116,81,82,81,100,108,98,106,108,104,161,96,81",
+                        "endOffsets": "203,301,409,499,604,721,803,886,968,1069,1178,1277,1384,1493,1598,1760,1857,1939"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Cris\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\41d8de884974eed8cc21337ae6400d81\\res\\values-sw\\values-sw.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,16 +28,6 @@
                         "startOffsets": "1944",
                         "endColumns": "100",
                         "endOffsets": "2040"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\HongRuCai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5c298b0559d5a27fdf35903e38850cfe\\res\\values-sw\\values-sw.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,306,414,504,609,726,808,891,973,1074,1183,1282,1389,1498,1603,1765,1862",
-                        "endColumns": "102,97,107,89,104,116,81,82,81,100,108,98,106,108,104,161,96,81",
-                        "endOffsets": "203,301,409,499,604,721,803,886,968,1069,1178,1277,1384,1493,1598,1760,1857,1939"
                     }
                 }
             ]
