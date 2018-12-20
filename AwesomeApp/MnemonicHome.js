@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, Alert, Button, ScrollView} from 'react-native';
 import {Card} from 'react-native-elements';
-import {createStackNavigator, withNavigation, createAppContainer } from 'react-navigation';
+import {withNavigation} from 'react-navigation';
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 
@@ -11,7 +11,8 @@ class MnemonicContainer extends React.Component {
     this.state = {
       mnemonic: '',
       address: '',
-      initialAccount: 0
+      initialAccount: 0,
+      createButton: false
     }
   }
 
@@ -27,33 +28,34 @@ class MnemonicContainer extends React.Component {
 
   createAccount() {
     let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0'+this.state.initialAccount);
-    this.key = this.state.initialAccount
     this.addressList.push(wallet.address)
     this.setState({
       address: this.addressList,
-      initialAccount: this.key + 1
+      createButton: true
     })
   }
 
   refreshMnemonic() {
     let newMnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(16));
     this.setState({
-      mnemonic: newMnemonic
+      mnemonic: newMnemonic,
+      initialAccount: this.key + 1,
+      createButton: false
     })
   }
 
   render(){
     return(
-      <View style={{ margin: 20, flex: 1}}>
+      <View style={{ margin: 10, flex: 1}}>
         <Card title="Mnemonic Words">
           <Text style={styles.mnemonic}>
             {this.state.mnemonic}
           </Text>
         </Card>
-        <View style={{marginTop:20}}></View>
+        <View style={{marginTop:10}}></View>
         <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word"/>
-        <View style={{marginTop:20}}></View>
-        <Button onPress={() => this.createAccount()} title="Create Account"/>
+        <View style={{marginTop:10}}></View>
+        <Button onPress={() => this.createAccount()} title="Create Account" disabled={this.state.createButton}/>
         <ScrollView>
           <Items items={this.state.address} />
         </ScrollView>

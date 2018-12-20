@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
-import {createStackNavigator, createAppContainer,  withNavigation} from 'react-navigation';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 import MnemonicView from './MnemonicHome';
 import KeyStoreView from './KeyStoreHome';
@@ -19,12 +19,6 @@ class FirstPage extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  buttons: {
-    marginTop: 20
-  }
-})
 
 const HomeNav = createStackNavigator(
   {
