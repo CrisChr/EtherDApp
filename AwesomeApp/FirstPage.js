@@ -1,30 +1,36 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
-import {createStackNavigator, createAppContainer } from 'react-navigation';
+import {createStackNavigator, createAppContainer,  withNavigation} from 'react-navigation';
 
-import HomeView from './Home';
-import DetailsView from './Details';
+import MnemonicView from './MnemonicHome';
+import KeyStoreView from './KeyStoreHome';
 
-class HomeViewScreen extends React.Component {
+class FirstPage extends React.Component {
   render(){
     return(
-      <HomeView/>
+      <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
+        <View>
+          <Button title='Create address by mnemonic word' onPress={() => this.props.navigation.navigate('MnemonicView')}/>
+        </View>
+        <View style={{marginTop:20}}>
+          <Button title='Create address by importing key store file' onPress={() => this.props.navigation.navigate('KeyStoreView')} color='green'/>
+        </View>
+      </View>
     )
   }
 }
 
-class DetailsViewScreen extends React.Component {
-  render(){
-    return(
-      <DetailsView/>
-    )
+const styles = StyleSheet.create({
+  buttons: {
+    marginTop: 20
   }
-}
+})
 
 const HomeNav = createStackNavigator(
   {
-    HomeView: HomeViewScreen,
-    DetailsView: DetailsViewScreen
+    FirstPageView: FirstPage,
+    MnemonicView: MnemonicView,
+    KeyStoreView: KeyStoreView
   }
 )
 

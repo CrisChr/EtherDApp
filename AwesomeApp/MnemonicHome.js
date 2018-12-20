@@ -5,7 +5,7 @@ import {createStackNavigator, withNavigation, createAppContainer } from 'react-n
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 
-export default class WalletContainer extends React.Component {
+class MnemonicContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ export default class WalletContainer extends React.Component {
         <View style={{marginTop:20}}></View>
         <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word"/>
         <View style={{marginTop:20}}></View>
-        <Button onPress={() => this.createAccount()} title="Create Account" style={styles.button}/>
+        <Button onPress={() => this.createAccount()} title="Create Account"/>
         <ScrollView>
           <Items items={this.state.address} />
         </ScrollView>
@@ -87,3 +87,7 @@ const styles = StyleSheet.create({
    fontWeight: 'bold'
  }
 })
+
+const MnemonicView = withNavigation(MnemonicContainer);
+
+export default MnemonicView;

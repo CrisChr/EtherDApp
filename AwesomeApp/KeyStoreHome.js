@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import { withNavigation } from 'react-navigation';
 
 
-class Details extends React.Component {
+class KeyStore extends React.Component {
  render(){
 
    const { navigation } = this.props;
@@ -18,6 +18,6 @@ class Details extends React.Component {
  }
 }
 
-const DetailsView = withNavigation(Details);
+const KeyStoreView = withNavigation(KeyStore);
 
-export default DetailsView;
+export default KeyStoreView;
