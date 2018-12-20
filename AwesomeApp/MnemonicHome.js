@@ -19,14 +19,15 @@ class MnemonicContainer extends React.Component {
   addressList = []
   key = 0
 
-  async componentWillMount() {
+  /*Initial the */
+  async componentDidMount() {
     let newMnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(16));
     this.setState({
       mnemonic: newMnemonic
     })
   }
 
-  createAccount() {
+  async createAccount() {
     let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0'+this.state.initialAccount);
     this.addressList.push(wallet.address)
     this.setState({
@@ -86,7 +87,8 @@ const styles = StyleSheet.create({
  },
  accountStyle: {
    margin: 10,
-   fontWeight: 'bold'
+   fontWeight: 'bold',
+   fontSize: 15
  }
 })
 
