@@ -54,7 +54,7 @@ class MnemonicContainer extends React.Component {
           </Text>
         </Card>
         <View style={{marginTop:10}}></View>
-        <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word"/>
+        <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word" color='#f39800'/>
         <View style={{marginTop:10}}></View>
         <Button onPress={() => this.createAccount()} title="Create Account" disabled={this.state.createButton}/>
         <ScrollView>
