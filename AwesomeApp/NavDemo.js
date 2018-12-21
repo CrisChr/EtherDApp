@@ -1,5 +1,4 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -37,7 +36,7 @@ const stackNav = createBottomTabNavigator(
       screen: WalletContainerScreen,
       navigationOptions: () => ({
         tabBarIcon: ({focused, tintColor}) => (
-          <Ionicons name={focused ? 'ios-card' : 'ios-card-outline'} size={40} color={tintColor}/>
+          <Ionicons name={focused ? 'ios-card' : 'ios-card-outline'} size={35} color={tintColor}/>
         )
       })
     },
@@ -45,7 +44,7 @@ const stackNav = createBottomTabNavigator(
       screen: TransferScreen,
       navigationOptions: () => ({
         tabBarIcon: ({focused, tintColor}) => (
-          <Ionicons name={focused ? 'ios-cash' : 'ios-cash-outline'} size={40} color={tintColor}/>
+          <Ionicons name={focused ? 'ios-cash' : 'ios-cash-outline'} size={35} color={tintColor}/>
         )
       })
     },
@@ -67,12 +66,5 @@ const stackNav = createBottomTabNavigator(
 );
 
 const Nav = createAppContainer(stackNav);
-
-/*const styles = StyleSheet.create({
-  icon: {
-    height: 26,
-    width: 26
-  }
-});*/
 
 export default Nav;

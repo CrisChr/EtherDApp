@@ -4,6 +4,7 @@ import {Card} from 'react-native-elements';
 import {withNavigation} from 'react-navigation';
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
+import { TextInput } from 'react-native-gesture-handler';
 
 class MnemonicContainer extends React.Component {
   constructor(props){
@@ -16,27 +17,43 @@ class MnemonicContainer extends React.Component {
     }
   }
 
+  provider = null
   addressList = []
   key = 0
+  activeWallet = null
 
-  /*Initial the */
+  /*Initial the mnemonic word after the component mounted*/
   async componentDidMount() {
     let newMnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(16));
     this.setState({
       mnemonic: newMnemonic
     })
+    //get Ether network provider
+    this.provider = ethers.getDefaultProvider('ropsten');
   }
 
   createAccount() {
-    let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0'+this.state.initialAccount);
+    let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/'+this.state.initialAccount);
+    this.key = this.state.initialAccount
     this.addressList.push(wallet.address)
     this.setState({
       address: this.addressList,
-      createButton: true
+      createButton: true,
+      initialAccount: this.key + 1
     })
+    this.activeWallet = wallet.connect(this.provider); //Connect to Ether test network (ropsten test network)
+
+    //get the address balance
+    this.activeWallet.getBalance().then((balance) => {
+      let Accountbalance = ethers.utils.formatEther(balance)
+      Alert.alert(Accountbalance)
+    }, (error) => {
+      Alert.alert('error')
+    });
   }
 
   refreshMnemonic() {
+    //generate mnemonic word
     let newMnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(16));
     this.setState({
       mnemonic: newMnemonic,
@@ -49,9 +66,8 @@ class MnemonicContainer extends React.Component {
     return(
       <View style={{ margin: 10, flex: 1}}>
         <Card title="Mnemonic Words">
-          <Text style={styles.mnemonic}>
-            {this.state.mnemonic}
-          </Text>
+          <TextInput value={this.state.mnemonic} multiline = {true} style={styles.mnemonic} 
+            onChangeText={(mnemonic) => this.setState({mnemonic})}/>
         </Card>
         <View style={{marginTop:10}}></View>
         <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word" color='#f39800'/>
