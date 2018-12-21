@@ -27,7 +27,7 @@ class MnemonicContainer extends React.Component {
     })
   }
 
-  async createAccount() {
+  createAccount() {
     let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0'+this.state.initialAccount);
     this.addressList.push(wallet.address)
     this.setState({
