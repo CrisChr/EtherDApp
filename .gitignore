@@ -3,3 +3,5 @@ AwesomeApp/android/app/build
 AwesomeApp/.idea/
 AwesomeApp/.vscode/
 AwesomeApp/android/.gradle
+AwesomeApp/android/.gradle/4.4/taskHistory/taskHistory.bin
+AwesomeApp/android/.gradle/4.4/taskHistory/taskHistory.lock
