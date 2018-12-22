@@ -1,49 +1,70 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from 'react';
+import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import WalletContainer from './src/Main';
+import Transfer from './src/componets/Transfer/View/TransferView';
+import Account from './src/componets/Account/View/AccountView';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+class WalletContainerScreen extends React.Component{
+  render(){
+    return(
+      <WalletContainer/>
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+class TransferScreen extends React.Component {
+  render(){
+    return(
+      <Transfer/>
+    )
+  }
+}
+
+class AccountScreen extends React.Component {
+  render(){
+    return(
+      <Account/>
+    )
+  }
+}
+
+const stackNav = createBottomTabNavigator(
+  {
+    Wallet: {
+      screen: WalletContainerScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-card' : 'ios-card-outline'} size={35} color={tintColor}/>
+        )
+      })
+    },
+    Transfer: {
+      screen: TransferScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-cash' : 'ios-cash-outline'} size={35} color={tintColor}/>
+        )
+      })
+    },
+    Account: {
+      screen: AccountScreen,
+      navigationOptions: () => ({
+        tabBarIcon: ({focused, tintColor}) => (
+          <Ionicons name={focused ? 'ios-contact' : 'ios-contact-outline'} size={35} color={tintColor}/>
+        )
+      })
+    }
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  {
+    initialRouteName: 'Wallet', //Initial screen
+    tabBarOptions: {
+      showIcon: true
+    }
+  }
+);
+
+const Nav = createAppContainer(stackNav);
+
+export default Nav;
