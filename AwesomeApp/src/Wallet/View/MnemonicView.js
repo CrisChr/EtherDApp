@@ -6,6 +6,8 @@ import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 import { TextInput } from 'react-native-gesture-handler';
 
+import Items from '../Components/Item';
+
 class MnemonicContainer extends React.Component {
   constructor(props){
     super(props);
@@ -47,6 +49,7 @@ class MnemonicContainer extends React.Component {
     this.activeWallet.getBalance().then((balance) => {
       let Accountbalance = ethers.utils.formatEther(balance)
       //Alert.alert(Accountbalance)
+      console.log(Accountbalance)
     }, (error) => {
       Alert.alert('error')
     });
@@ -80,33 +83,6 @@ class MnemonicContainer extends React.Component {
     )
   }
 }
-
-class Items extends React.Component {
-  render(){
-    let addressList = []
-    for(var i=0; i<this.props.items.length; i++){
-      addressList.push(
-       <Text key={i} style={styles.accountStyle}>Address {i+1}: {this.props.items[i]}</Text>
-      )
-    }
-    return (
-      <View>{addressList}</View>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
- mnemonic: {
-   fontWeight: 'bold',
-   color: 'red',
-   textAlign: 'center'
- },
- accountStyle: {
-   margin: 10,
-   fontWeight: 'bold',
-   fontSize: 15
- }
-})
 
 const MnemonicView = withNavigation(MnemonicContainer);
 
