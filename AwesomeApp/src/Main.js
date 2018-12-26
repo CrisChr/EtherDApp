@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-import MnemonicView from './componets/Wallet/View/MnemonicView';
-import KeyStoreView from './componets/Wallet/View/KeyStoreView';
+import MnemonicView from './Wallet/View/MnemonicView';
+import KeyStoreView from './Wallet/View/KeyStoreView';
 
 class FirstPage extends React.Component {
   render(){

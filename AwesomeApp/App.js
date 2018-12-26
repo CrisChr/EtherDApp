@@ -1,10 +1,10 @@
 import React from 'react';
-import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator, Alert} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import WalletContainer from './src/Main';
-import Transfer from './src/componets/Transfer/View/TransferView';
-import Account from './src/componets/Account/View/AccountView';
+import Transfer from './src/Transfer/View/TransferView';
+import Account from './src/Account/View/AccountView';
 
 class WalletContainerScreen extends React.Component{
   render(){
@@ -42,10 +42,38 @@ const stackNav = createBottomTabNavigator(
     },
     Transfer: {
       screen: TransferScreen,
-      navigationOptions: () => ({
+      navigationOptions: ({navigation}) => ({
         tabBarIcon: ({focused, tintColor}) => (
           <Ionicons name={focused ? 'ios-cash' : 'ios-cash-outline'} size={35} color={tintColor}/>
-        )
+        ),
+        tabBarOnPress: () => {
+          storage.load({
+            key: 'newaddress',
+            autoSync: true,
+            syncInBackground: true,
+          }).then(ret => {
+            let newAddressList = []
+            newAddressList = ret.addresslist
+            let newAddress = ret.nowaddress
+            if(!newAddressList.includes(newAddress)) {
+              newAddressList.push(newAddress)
+            }
+            
+            console.log("add new addresses: ", newAddressList)
+            navigation.navigate('Transfer', {content: newAddressList})
+          }).catch(err => {
+            console.log(err.message);
+            switch (err.name) {
+              case 'NotFoundError':
+                // 更新
+                console.log('nononoononono')
+                break;
+              case 'ExpiredError':
+                // TODO
+                break;
+            }
+          }) 
+        }
       })
     },
     Account: {

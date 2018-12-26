@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Alert, Button, ScrollView} from 'react-native';
+import {StyleSheet, View, Alert, Button, ScrollView} from 'react-native';
 import {Card} from 'react-native-elements';
 import {withNavigation} from 'react-navigation';
 import 'ethers/dist/shims.js';
@@ -13,7 +13,7 @@ class MnemonicContainer extends React.Component {
     super(props);
     this.state = {
       mnemonic: '',
-      address: '',
+      address: [],
       initialAccount: 0,
       createButton: false
     }
@@ -44,15 +44,16 @@ class MnemonicContainer extends React.Component {
       initialAccount: this.key + 1
     })
     this.activeWallet = wallet.connect(this.provider); //Connect to Ether test network (ropsten test network)
-
+    this.refreshMnemonic()
+    this.saveAddresses(wallet.address)
     //get the address balance
-    this.activeWallet.getBalance().then((balance) => {
-      let Accountbalance = ethers.utils.formatEther(balance)
-      //Alert.alert(Accountbalance)
-      console.log(Accountbalance)
-    }, (error) => {
-      Alert.alert('error')
-    });
+    // this.activeWallet.getBalance().then((balance) => {
+    //   let Accountbalance = ethers.utils.formatEther(balance)
+    //   //Alert.alert(Accountbalance)
+    //   console.log(Accountbalance)
+    // }, (error) => {
+    //   Alert.alert('error')
+    // });
   }
 
   refreshMnemonic() {
@@ -65,6 +66,18 @@ class MnemonicContainer extends React.Component {
     })
   }
 
+  saveAddresses(address) {
+    storage.save({
+      key: 'newaddress',
+      data: {
+        addresslist: this.addressList,
+        nowaddress: address
+      },
+      expires: null
+    })
+    console.log("add one address: ", this.addressList)
+  }
+
   render(){
     return(
       <View style={{ margin: 10, flex: 1}}>
@@ -73,9 +86,7 @@ class MnemonicContainer extends React.Component {
             onChangeText={(mnemonic) => this.setState({mnemonic})}/>
         </Card>
         <View style={{marginTop:10}}></View>
-        <Button onPress={() => this.refreshMnemonic()} title="Refresh Mnemonic Word" color='#f39800'/>
-        <View style={{marginTop:10}}></View>
-        <Button onPress={() => this.createAccount()} title="Create Account" disabled={this.state.createButton}/>
+        <Button onPress={() => this.createAccount()} title="Create Account"/>
         <ScrollView>
           <Items items={this.state.address} />
         </ScrollView>
@@ -83,6 +94,14 @@ class MnemonicContainer extends React.Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  mnemonic: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'red'
+  }
+})
 
 const MnemonicView = withNavigation(MnemonicContainer);
 
