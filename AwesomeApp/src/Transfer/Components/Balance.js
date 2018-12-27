@@ -16,36 +16,33 @@ export default class Balance extends React.Component {
 
   ethers = ""
 
-  async changeBalance(balance) {
-    // this.setState({
-    //     etherString: balance
-    // })
-    console.log("Balance: ",balance)
+  async getBalance(selectedAddr) {
+    //console.log("address: ", selectedAddr)
+    let provider = ethers.getDefaultProvider('ropsten');
+    provider.getBalance(selectedAddr).then((balance) => {
+      this.ethers = ethers.utils.formatEther(balance, { commify: true })
+      this.setState({
+        etherString: this.ethers
+      })
+      //console.log("Balance: ", this.ethers)
+    })
+    
   }
 
   render(){
     let selectedIndex = this.props.selected
     let addrList = this.props.list
+    if(selectedIndex == null) selectedIndex = 0
     let selectedAddr = addrList[selectedIndex]
-
-    // let etherString=''
-    // let provider = ethers.getDefaultProvider('ropsten');
-    // provider.getBalance(selectedAddr).then(function(balance){
-    //   etherString = ethers.utils.formatEther(balance, { commify: true })
-    // }, (error) => {
-
-    // })
-    
-    console.log("address: ", selectedAddr)
-    let provider = ethers.getDefaultProvider('ropsten');
-    provider.getBalance(selectedAddr).then(function(balance){
-      this.ethers = ethers.utils.formatEther(balance, { commify: true })
-      console.log("Balance: ", this.ethers)
-    })
     return (
       <View style={styles.buttonstyle}>
-        <TextInput/>
-        <Button title='Refresh' onPress={() => this.getBalance()}/>
+        <View>
+          <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} onChangeText={(text) => this.setState({text})}
+            value={this.state.etherString} editable={false}/>
+          <Text>{"ether"}</Text>
+        </View>
+        
+        <Button title='Refresh' onPress={(addr) => this.getBalance(selectedAddr)}/>
       </View>
     )
   }
