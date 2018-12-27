@@ -31,7 +31,7 @@ class MnemonicContainer extends React.Component {
       mnemonic: newMnemonic
     })
     //get Ether network provider
-    this.provider = ethers.getDefaultProvider('ropsten');
+    //this.provider = ethers.getDefaultProvider('ropsten');
   }
 
   createAccount() {
@@ -43,9 +43,10 @@ class MnemonicContainer extends React.Component {
       createButton: true,
       initialAccount: this.key + 1
     })
-    this.activeWallet = wallet.connect(this.provider); //Connect to Ether test network (ropsten test network)
-    this.refreshMnemonic()
+    //this.activeWallet = wallet.connect(this.provider); //Connect to Ether test network (ropsten test network)
     this.saveAddresses(wallet.address)
+    this.refreshMnemonic()
+    
     //get the address balance
     // this.activeWallet.getBalance().then((balance) => {
     //   let Accountbalance = ethers.utils.formatEther(balance)

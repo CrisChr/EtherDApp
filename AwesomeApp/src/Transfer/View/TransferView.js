@@ -2,12 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, View, Picker} from 'react-native';
 import {withNavigation} from 'react-navigation';
 
+import Balance from '../Components/Balance'
+
 class TransferView extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       addressList: [],
-      pickerValue: 'Select your address'
+      pickerValue: null
     }
   }
 
@@ -73,16 +75,29 @@ class TransferView extends React.Component {
     let newAddress = navigation.getParam('content', ['No avalibal address'])
     return(
       <View style={{flex: 1}}>
-        <Picker style={{width: 420, borderColor:'red'}} selectedValue={this.state.pickerValue}
-          onValueChange={(itemValue, itemIndex) => this.setState({pickerValue:itemValue})}>
-          {
-            newAddress.map((key, i) => this.renderPicker(key, i))
-          }
-        </Picker>
+        <View style={{marginTop: 10}}>
+          <Text style={styles.titlestyle}>Select your address:</Text>
+          <Picker style={styles.pickerstyle} selectedValue={this.state.pickerValue}
+            onValueChange={(itemValue, itemIndex) => this.setState({pickerValue:itemValue})}>
+              {
+                newAddress.map((key, i) => this.renderPicker(key, i))
+              }
+          </Picker>
+        </View>
+        <Balance selected={this.state.pickerValue} list={newAddress}/>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  titlestyle: {
+    fontWeight: 'bold'
+  },
+  pickerstyle: {
+    width: 420,
+  },
+})
 
 const Transfer = withNavigation(TransferView)
 
