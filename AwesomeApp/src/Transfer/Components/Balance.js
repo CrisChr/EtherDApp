@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import {StyleSheet, Text, View, Button, TextInput, Picker} from 'react-native';
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 import ignoreWarnings from 'react-native-ignore-warnings';
@@ -13,7 +13,8 @@ export default class Balance extends React.Component {
         etherString: '',
         transaction: '',
         targetAddr: '',
-        etherVal: ''
+        etherVal: '',
+        pickerValue: null
     }
   }
 
@@ -43,8 +44,8 @@ export default class Balance extends React.Component {
   emitTransaction(wallet) {
     let activeWallet = wallet.connect(ethers.getDefaultProvider('ropsten'))
     activeWallet.sendTransaction({
-      to: '0x405115cbf5266F3a19B708C1D1a22a28ed2b1638',
-      value: ethers.utils.parseEther('0.5')
+      to: ethers.utils.getAddress(this.state.pickerValue),
+      value: ethers.utils.parseEther(this.state.etherVal)
     }).then((tx) => {
       console.log(tx)
       alert('Success!')
@@ -53,8 +54,15 @@ export default class Balance extends React.Component {
     })
   }
 
+  renderPicker(key, i) {
+    return (
+      <Picker.Item key={i} label={key} value={i}/>
+    )
+  }
+
   render(){
     let selectedIndex = this.props.selected
+    let addressList = this.props.addresses
     let walletList = this.props.wallets
     if(selectedIndex == null) selectedIndex = 0
     let selectedWallet = walletList[selectedIndex]
@@ -76,8 +84,12 @@ export default class Balance extends React.Component {
         </View>
         <View>
           <Text style={styles.title_tyle}>Target Address:</Text>
-          <TextInput style={{width:400, marginLeft:5, borderWidth:1}} onChangeText={(targetAddr) => this.setState({targetAddr})}
-            value={this.state.targetAddr} editable={true}/>
+          <Picker style={styles.pickerstyle} selectedValue={this.state.pickerValue}
+            onValueChange={(itemValue, itemIndex) => this.setState({pickerValue:itemValue})}>
+              {
+                addressList.map((key, i) => this.renderPicker(key, i))
+              }
+          </Picker>
         </View>
         <View style={{marginTop:10}}>
           <Text style={styles.title_tyle}>Value (ether):</Text>

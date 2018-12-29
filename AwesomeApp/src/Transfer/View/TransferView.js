@@ -33,7 +33,7 @@ class TransferView extends React.Component {
               }
           </Picker>
         </View>
-        <Balance selected={this.state.pickerValue} wallets={wallets}/>
+        <Balance selected={this.state.pickerValue} wallets={wallets} addresses={addresses}/>
       </View>
     )
   }

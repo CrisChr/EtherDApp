@@ -14,13 +14,15 @@ class MnemonicContainer extends React.Component {
     this.state = {
       mnemonic: '',
       addressArray: [],
-      walletArray: []
+      walletArray: [],
+      account: 0
     }
   }
   
   walletList = []
   addressList = []
   provider = null
+  accountKey = 0
 
   /*Initial the mnemonic word after the component mounted*/
   async componentDidMount() {
@@ -31,14 +33,17 @@ class MnemonicContainer extends React.Component {
   }
 
   createAccount() {
-    let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/0');
+    let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/'+this.state.account);
+    //alert('m/44\'/60\'/0\'/0/'+this.state.account)
     global.globalVal.wallets.push(wallet)
     this.addressList.push(wallet.address)
+    this.accountKey = this.state.account
     this.setState({
-      addressArray: this.addressList
+      addressArray: this.addressList,
+      account: this.accountKey + 1
     })
     this.saveAddresses(wallet.address)
-    this.refreshMnemonic()
+    //this.refreshMnemonic()
   }
 
   refreshMnemonic() {
