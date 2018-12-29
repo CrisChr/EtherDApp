@@ -58,18 +58,17 @@ const stackNav = createBottomTabNavigator(
             if(!newAddressList.includes(newAddress)) {
               newAddressList.push(newAddress)
             }
-            
-            console.log("add new addresses: ", newAddressList)
-            navigation.navigate('Transfer', {content: newAddressList})
+            //let wallets = ret.walletlist
+            //console.log("add new addresses: ", global.globalVal.wallets)
+            navigation.navigate('Transfer', {address_list: newAddressList, wallet_list: global.globalVal.wallets})
           }).catch(err => {
             console.log(err.message);
             switch (err.name) {
               case 'NotFoundError':
-                // 更新
-                console.log('nononoononono')
+                console.log('Not Found Error')
                 break;
               case 'ExpiredError':
-                // TODO
+                console.log('Expired Error')
                 break;
             }
           }) 

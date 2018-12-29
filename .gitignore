@@ -1,5 +1,6 @@
 AwesomeApp/node_modules
 AwesomeApp/android/app/build
+AwesomeApp/android/app/src
 AwesomeApp/.idea/
 AwesomeApp/.vscode/
 AwesomeApp/android/.gradle
