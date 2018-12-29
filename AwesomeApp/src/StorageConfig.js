@@ -7,7 +7,7 @@ const storage = new Storage({
 
   // 存储引擎：对于RN使用AsyncStorage，对于web使用window.localStorage
   // 如果不指定则数据只会保存在内存中，重启后即丢失
-  storageBackend: AsyncStorage,
+  //storageBackend: AsyncStorage,
 
   // 数据过期时间，默认一整天（1000 * 3600 * 24 毫秒），设为null则永不过期
   defaultExpires: null,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createAppContainer, createBottomTabNavigator, Alert} from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import WalletContainer from './src/Main';
@@ -49,8 +49,8 @@ const stackNav = createBottomTabNavigator(
         tabBarOnPress: () => {
           storage.load({
             key: 'newaddress',
-            autoSync: true,
-            syncInBackground: true,
+            autoSync: false,
+            syncInBackground: false,
           }).then(ret => {
             let newAddressList = []
             newAddressList = ret.addresslist
@@ -58,14 +58,13 @@ const stackNav = createBottomTabNavigator(
             if(!newAddressList.includes(newAddress)) {
               newAddressList.push(newAddress)
             }
-            //let wallets = ret.walletlist
-            //console.log("add new addresses: ", global.globalVal.wallets)
             navigation.navigate('Transfer', {address_list: newAddressList, wallet_list: global.globalVal.wallets})
           }).catch(err => {
             console.log(err.message);
             switch (err.name) {
               case 'NotFoundError':
                 console.log('Not Found Error')
+                alert('Please create address first!')
                 break;
               case 'ExpiredError':
                 console.log('Expired Error')

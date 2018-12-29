@@ -21,7 +21,6 @@ class MnemonicContainer extends React.Component {
   
   walletList = []
   addressList = []
-  provider = null
   accountKey = 0
 
   /*Initial the mnemonic word after the component mounted*/
@@ -34,7 +33,6 @@ class MnemonicContainer extends React.Component {
 
   createAccount() {
     let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/'+this.state.account);
-    //alert('m/44\'/60\'/0\'/0/'+this.state.account)
     global.globalVal.wallets.push(wallet)
     this.addressList.push(wallet.address)
     this.accountKey = this.state.account
