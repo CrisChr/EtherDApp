@@ -24,7 +24,7 @@ class MnemonicContainer extends React.Component {
   accountKey = 0
 
   /*Initial the mnemonic word after the component mounted*/
-  async componentDidMount() {
+  componentDidMount() {
     let newMnemonic = ethers.utils.HDNode.entropyToMnemonic(ethers.utils.randomBytes(16));
     this.setState({
       mnemonic: newMnemonic

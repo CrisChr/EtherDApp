@@ -19,12 +19,12 @@ export default class Balance extends React.Component {
 
   provider = ethers.getDefaultProvider('ropsten')
 
-  getBalanceAndCount(wallet) {
+  async getBalanceAndCount(wallet) {
     //get Ether testing network provider
     let activeWallet = wallet.connect(this.provider)
 
     //get address balance
-    activeWallet.getBalance('pending').then((balance) => {
+    await activeWallet.getBalance('pending').then((balance) => {
       this.setState({
         etherString: ethers.utils.formatEther(balance, { commify: true })
       })
@@ -33,7 +33,7 @@ export default class Balance extends React.Component {
     })
 
     //get address transaction count
-    activeWallet.getTransactionCount('pending').then((transactionCount) => {
+    await activeWallet.getTransactionCount('pending').then((transactionCount) => {
       this.setState({
         transaction: transactionCount.toString()
       })
@@ -42,10 +42,10 @@ export default class Balance extends React.Component {
     })
   }
 
-  emitTransaction(wallet) {
+  async emitTransaction(wallet) {
     let activeWallet = wallet.connect(this.provider)
     alert("picker value: "+this.state.pickerValue)
-    activeWallet.sendTransaction({
+    await activeWallet.sendTransaction({
       to: ethers.utils.getAddress(this.props.addresses[this.state.pickerValue]),
       value: ethers.utils.parseEther(this.state.etherVal)
     }).then((tx) => {
