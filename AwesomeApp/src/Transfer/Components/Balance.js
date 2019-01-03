@@ -44,7 +44,6 @@ export default class Balance extends React.Component {
 
   async emitTransaction(wallet) {
     let activeWallet = wallet.connect(this.provider)
-    alert("picker value: "+this.state.pickerValue)
     await activeWallet.sendTransaction({
       to: ethers.utils.getAddress(this.props.addresses[this.state.pickerValue]),
       value: ethers.utils.parseEther(this.state.etherVal)
