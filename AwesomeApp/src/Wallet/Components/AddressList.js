@@ -1,20 +1,23 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export default class Items extends React.Component {
+import { List } from '@ant-design/react-native';
+const Item = List.Item;
+
+export default class AddressList extends React.Component {
   render(){
     let addressList = []
     let addresses = this.props.items
     if(addresses != null && addresses.length != 0){
       for(var i=0; i<addresses.length; i++){
         addressList.push(
-         <Text key={i} style={styles.accountStyle}>Address {i+1}: {this.props.items[i]}</Text>
+         <Item key={i}>{addresses[i]}</Item>
         )
       }
     }
     
     return (
-      <View>{addressList}</View>
+      <List renderHeader={'Addresses'}>{addressList}</List>
     )
   }
 }

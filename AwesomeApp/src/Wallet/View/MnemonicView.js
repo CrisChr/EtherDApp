@@ -1,12 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Alert, Button, ScrollView} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
+import { Button } from '@ant-design/react-native';
 import {Card} from 'react-native-elements';
 import {withNavigation} from 'react-navigation';
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 import { TextInput } from 'react-native-gesture-handler';
 
-import Items from '../Components/Item';
+import AddressList from '../Components/AddressList';
 
 class MnemonicContainer extends React.Component {
   constructor(props){
@@ -15,7 +16,8 @@ class MnemonicContainer extends React.Component {
       mnemonic: '',
       addressArray: [],
       walletArray: [],
-      account: 0
+      account: 0,
+      buttonDisabled: false
     }
   }
   
@@ -33,15 +35,20 @@ class MnemonicContainer extends React.Component {
 
   createAccount() {
     let wallet = ethers.Wallet.fromMnemonic(this.state.mnemonic, 'm/44\'/60\'/0\'/0/'+this.state.account);
-    global.globalVal.wallets.push(wallet)
     this.addressList.push(wallet.address)
     this.accountKey = this.state.account
     this.setState({
+      buttonDisabled: true,
       addressArray: this.addressList,
-      account: this.accountKey + 1
+      account: this.accountKey + 1,
     })
+    global.globalVal.wallets.push(wallet)
     this.saveAddresses(wallet.address)
     //this.refreshMnemonic()
+
+    this.setState({
+      buttonDisabled: false
+    })
   }
 
   refreshMnemonic() {
@@ -72,9 +79,11 @@ class MnemonicContainer extends React.Component {
             onChangeText={(mnemonic) => this.setState({mnemonic})}/>
         </Card>
         <View style={{marginTop:10}}></View>
-        <Button onPress={() => this.createAccount()} title="Create Account"/>
+        <Button type='primary' onPress={() => this.createAccount()} disabled={this.state.buttonDisabled}>
+          Create Account
+        </Button>
         <ScrollView>
-          <Items items={this.state.addressArray} />
+          <AddressList items={this.state.addressArray} />
         </ScrollView>
       </View>
     )

@@ -1,6 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {View} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+
+import { Button } from '@ant-design/react-native';
 
 import MnemonicView from './Wallet/View/MnemonicView';
 import KeyStoreView from './Wallet/View/KeyStoreView';
@@ -10,10 +12,14 @@ class FirstPage extends React.Component {
     return(
       <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
         <View>
-          <Button title='Create address by mnemonic word' onPress={() => this.props.navigation.navigate('MnemonicView')}/>
+          <Button type='ghost' onPress={() => this.props.navigation.navigate('MnemonicView')}>
+            Create address by mnemonic word
+          </Button>
         </View>
         <View style={{marginTop:20}}>
-          <Button title='Create address by importing key store file' onPress={() => this.props.navigation.navigate('KeyStoreView')} color='green'/>
+          <Button type='ghost' onPress={() => this.props.navigation.navigate('KeyStoreView')}>
+            Create address by importing key store file
+          </Button>
         </View>
       </View>
     )
