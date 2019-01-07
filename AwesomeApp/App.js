@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Toast } from '@ant-design/react-native';
 
 import WalletContainer from './src/Main';
 import Transfer from './src/Transfer/View/TransferView';
@@ -63,8 +64,8 @@ const stackNav = createBottomTabNavigator(
             console.log(err.message);
             switch (err.name) {
               case 'NotFoundError':
-                console.log('Not Found Error')
-                alert('Please create address first!')
+                //console.log('Not Found Error')
+                Toast.success("Please create your address!", 3)
                 break;
               case 'ExpiredError':
                 console.log('Expired Error')

@@ -90,11 +90,7 @@ export default class Balance extends React.Component {
           </Picker>
         </View>
         <List>
-          <InputItem clear type="number" onChange={value => {
-              this.setState({
-                number: value,
-              });
-            }}
+          <InputItem clear type="number" onChange={value => this.setState({number: value})}
             value={this.state.number} placeholder='ether'>Value:</InputItem>
         </List>
         <View style={styles.button_style}>
@@ -113,12 +109,12 @@ const styles = StyleSheet.create({
   title_tyle: {
     fontWeight: 'bold'
   },
-  input_style: {
-    width: 200, 
-    borderColor: 'gray', 
-    borderWidth: 1,
-    marginLeft: 10
-  },
+  // input_style: {
+  //   width: 200, 
+  //   borderColor: 'gray', 
+  //   borderWidth: 1,
+  //   marginLeft: 10
+  // },
   button_style: {
     marginTop: 10, 
     width:100, 
