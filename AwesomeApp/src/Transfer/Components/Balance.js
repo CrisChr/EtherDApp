@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, TextInput, Picker} from 'react-native';
+import {StyleSheet, Text, View, Picker} from 'react-native';
+import { InputItem, Button, List } from '@ant-design/react-native';
 import 'ethers/dist/shims.js';
 import { ethers } from 'ethers';
 import ignoreWarnings from 'react-native-ignore-warnings';
@@ -12,7 +13,7 @@ export default class Balance extends React.Component {
     this.state = {
         etherString: '',
         transaction: '',
-        etherVal: '',
+        number: '',
         pickerValue: null
     }
   }
@@ -46,7 +47,7 @@ export default class Balance extends React.Component {
     let activeWallet = wallet.connect(this.provider)
     await activeWallet.sendTransaction({
       to: ethers.utils.getAddress(this.props.addresses[this.state.pickerValue]),
-      value: ethers.utils.parseEther(this.state.etherVal)
+      value: ethers.utils.parseEther(this.state.number)
     }).then((tx) => {
       console.log(tx)
       alert('Success!')
@@ -70,18 +71,14 @@ export default class Balance extends React.Component {
     
     return (
       <View style={styles.input_group_tyle}>
-        <View>
-          <Text style={styles.title_tyle}>Balance (ether):</Text>
-          <TextInput style={styles.input_style} onChangeText={(text) => this.setState({text})}
-            value={this.state.etherString} editable={false}/>
-        </View>
-        <View style={{marginTop:10}}>
-          <Text style={styles.title_tyle}>Transfer count:</Text>
-          <TextInput style={styles.input_style} onChangeText={(text) => this.setState({text})} 
-            value={this.state.transaction} editable={false}/>
-        </View>
+        <List>
+          <InputItem clear type='number' onChange={(text) => this.setState({text})}
+            value={this.state.etherString} editable={false} placeholder='ether'>Balance:</InputItem>
+          <InputItem clear type='number' onChange={(text) => this.setState({text})} 
+            value={this.state.transaction} editable={false} style={{marginTop:10}}>Transfer count:</InputItem>
+        </List>
         <View style={styles.button_style}>
-          <Button title='Refresh' onPress={(wallet) => this.getBalanceAndCount(selectedWallet)}/>
+          <Button type='primary' onPress={(wallet) => this.getBalanceAndCount(selectedWallet)}>Refresh</Button>
         </View>
         <View>
           <Text style={styles.title_tyle}>Target Address:</Text>
@@ -92,13 +89,16 @@ export default class Balance extends React.Component {
               }
           </Picker>
         </View>
-        <View style={{marginTop:10}}>
-          <Text style={styles.title_tyle}>Value (ether):</Text>
-          <TextInput style={styles.input_style} onChangeText={(etherVal) => this.setState({etherVal})}
-            value={this.state.etherVal} editable={true}/>
-        </View>
+        <List>
+          <InputItem clear type="number" onChange={value => {
+              this.setState({
+                number: value,
+              });
+            }}
+            value={this.state.number} placeholder='ether'>Value:</InputItem>
+        </List>
         <View style={styles.button_style}>
-          <Button title='Transfer' onPress={(wallet) => this.emitTransaction(selectedWallet)} color='#ee7800'/>
+          <Button type='warning' onPress={(wallet) => this.emitTransaction(selectedWallet)}>Transfer</Button>
         </View>
       </View>
     )

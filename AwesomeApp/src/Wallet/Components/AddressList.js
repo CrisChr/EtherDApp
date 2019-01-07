@@ -17,7 +17,7 @@ export default class AddressList extends React.Component {
     }
     
     return (
-      <List renderHeader={'Addresses'}>{addressList}</List>
+      <List style={styles.accountStyle}>{addressList}</List>
     )
   }
 }
