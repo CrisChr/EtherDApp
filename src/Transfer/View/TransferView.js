@@ -1,0 +1,53 @@
+import React from 'react';
+import {StyleSheet, Text, View, Picker} from 'react-native';
+import {withNavigation} from 'react-navigation';
+
+import Balance from '../Components/Balance'
+
+class TransferView extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      pickerValue: null
+    }
+  }
+  
+  renderPicker(key, i) {
+    return (
+      <Picker.Item key={i} label={key} value={i}/>
+    )
+  }
+
+  render(){
+    let {navigation} = this.props
+    let addresses = navigation.getParam('address_list', ['No avaliable address'])
+    let wallets = navigation.getParam('wallet_list', ['No avaliable wallet'])
+    return(
+      <View style={{flex: 1}}>
+        <View style={{marginTop: 10}}>
+          <Text style={styles.titlestyle}>Select your address:</Text>
+          <Picker style={styles.pickerstyle} selectedValue={this.state.pickerValue}
+            onValueChange={(itemValue, itemIndex) => this.setState({pickerValue:itemValue})}>
+              {
+                addresses.map((key, i) => this.renderPicker(key, i))
+              }
+          </Picker>
+        </View>
+        <Balance selected={this.state.pickerValue} addresses={addresses} wallets={wallets}/>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  titlestyle: {
+    fontWeight: 'bold'
+  },
+  pickerstyle: {
+    width: 420,
+  },
+})
+
+const Transfer = withNavigation(TransferView)
+
+export default Transfer
